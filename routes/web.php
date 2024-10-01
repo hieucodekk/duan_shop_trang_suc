@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DanhMucController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
 });
 // Route::get('home', function () {
 //     return view('home');
@@ -26,11 +27,25 @@ Route::get('register',[AuthController::class,'showFromregister']);
 Route::post('register',[AuthController::class,'register'])->name('register');
 Route::post('logout',[AuthController::class,'logout'])->name(name: 'logout');
 
-Route::get('admin', function(){
-    return "dday la admin";
-})->middleware('auth.admin');
-Route::middleware('auth')->group(function(){
-    Route::get('home', function ()  {
-        return 'hoemwrw';
+// Route::get('admin', function(){
+//     return "dday la admin";
+// })->middleware('auth.admin');
+// Route::middleware('auth')->group(function(){
+//     Route::get('home', function ()  {
+//         return 'hoemwrw';
+//     });
+// });
+Route::middleware(['auth','auth.admin'])->prefix('admins')
+->as('admins.')
+->group(function(){
+    Route::prefix('danhmucs')
+    ->as('danhmucs.')
+    ->group(function(){
+        Route::get('/',[DanhMucController::class,'index'])->name('index');
+        Route::get('create',[DanhMucController::class,'create'])->name('create');
+        Route::post('store',[DanhMucController::class,'store'])->name('store');
+        Route::get('{id}/edit',[DanhMucController::class,'edit'])->name('edit');
+        Route::put('update/{id}',[DanhMucController::class,'update'])->name('update');
+        Route::delete('destroy/{id}',[DanhMucController::class,'destroy'])->name('destroy');
     });
 });
