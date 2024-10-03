@@ -23,7 +23,7 @@
 
     <!-- Icons -->
     <link href="{{ asset('assets/admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-
+    @yield('css')
 </head>
 
 <!-- body start -->

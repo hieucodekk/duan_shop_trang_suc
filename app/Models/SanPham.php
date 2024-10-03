@@ -19,7 +19,7 @@ class SanPham extends Model
         'so_luong',
         'luot_xem',
         'ngay_nhap',
-        'dang_muc_id',
+        'danh_muc_id',
         'is_type',
         'is_new',
         'is_hot',

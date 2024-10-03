@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DanhMucController;
+use App\Http\Controllers\Admin\SanPhamController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,7 @@ Route::post('logout',[AuthController::class,'logout'])->name(name: 'logout');
 Route::middleware(['auth','auth.admin'])->prefix('admins')
 ->as('admins.')
 ->group(function(){
+    
     Route::prefix('danhmucs')
     ->as('danhmucs.')
     ->group(function(){
@@ -47,5 +49,16 @@ Route::middleware(['auth','auth.admin'])->prefix('admins')
         Route::get('{id}/edit',[DanhMucController::class,'edit'])->name('edit');
         Route::put('update/{id}',[DanhMucController::class,'update'])->name('update');
         Route::delete('destroy/{id}',[DanhMucController::class,'destroy'])->name('destroy');
+    });
+
+    Route::prefix('sanphams')
+    ->as('sanphams.')
+    ->group(function(){
+        Route::get('/',[SanPhamController::class,'index'])->name('index');
+        Route::get('create',[SanPhamController::class,'create'])->name('create');
+        Route::post('store',[SanPhamController::class,'store'])->name('store');
+        Route::get('{id}/edit',[SanPhamController::class,'edit'])->name('edit');
+        Route::put('update/{id}',[SanPhamController::class,'update'])->name('update');
+        Route::delete('destroy/{id}',[SanPhamController::class,'destroy'])->name('destroy');
     });
 });

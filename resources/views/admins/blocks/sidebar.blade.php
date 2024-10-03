@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class='tp-link' href='widgets.html'>
+                    <a class='tp-link' href='{{route('admins.sanphams.index')}}'>
                         <i data-feather="align-center"></i>
                         <span> Product </span>
                     </a>
