@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\DanhMucController;
 use App\Http\Controllers\Admin\SanPhamController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
-    return view('home');
+    return view('layouts.client');
 });
 // Route::get('home', function () {
 //     return view('home');
@@ -62,3 +64,7 @@ Route::middleware(['auth','auth.admin'])->prefix('admins')
         Route::delete('destroy/{id}',[SanPhamController::class,'destroy'])->name('destroy');
     });
 });
+Route::get('/product/detail/{id}',[ProductController::class, 'detailSanPham'])->name('products.detail');
+Route::get('/list-cart',[CartController::class, 'listCart'])->name('cart.list');
+Route::post('/add-to-cart',[CartController::class, 'addCart'])->name('cart.add');
+Route::post('/update-cart',[CartController::class, 'updateCart'])->name('cart.update');

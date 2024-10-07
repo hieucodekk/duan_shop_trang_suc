@@ -114,7 +114,7 @@
                                             <input type="text" id="mo_ta_ngan" name="mo_ta_ngan"
                                                 class="form-control @error('mo_ta_ngan')
                                                 is-invalid @enderror"
-                                                value="{{ $sanPham->ngay_nhap }}">
+                                                value="{{ $sanPham->mo_ta_ngan }}">
                                             @error('mo_ta_ngan')
                                                 <p>{{ $message }}</p>
                                             @enderror
@@ -235,9 +235,9 @@
             })
 
             var old_content = `{!! $sanPham->noi_dung !!}`
-            quill.root.innerHTML = old_content
+            quill.root.innerHTML = old_content;
 
-            quill.on('text-chagne', function() {
+            quill.on('text-change', function() {
                 var html = quill.root.innerHTML;
                 document.getElementById('noi_dung_content').value = html
             })

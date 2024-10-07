@@ -23,7 +23,7 @@ class SanPhamRequest extends FormRequest
     {
         return [
             //
-            'ma_san_pham'=>'required|max:10|unique:san_phams',
+            'ma_san_pham'=>'required|max:10|unique:san_phams,ma_san_pham,' . $this->route('id'),
             'ten_san_pham'=>'required|max:255',
             'hinh_anh'=>'image|mimes:png,jpg,jpeg',
             'gia_san_pham'=>'required|numeric|min:0',
