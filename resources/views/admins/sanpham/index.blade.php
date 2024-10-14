@@ -23,6 +23,13 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
+                                @if (session('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('sucess') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-babel="Close">
+                                        </button>
+                                    </div>
+                                @endif
                                 <table class="table table-striped mb-0">
                                     <thead>
                                         <tr>
@@ -48,7 +55,7 @@
                                                 </td>
                                                 <td>{{ $item->danhMuc->ten_danh_muc }}</td>
                                                 <td>{{ number_format($item->gia_san_pham) }}</td>
-                                                <td>{{ empty($item->gia_khuyen_mai) ? 0: $item->gia_khuyen_mai }}</td>
+                                                <td>{{ empty($item->gia_khuyen_mai) ? 0 : $item->gia_khuyen_mai }}</td>
                                                 <td>{{ $item->so_luong }}</td>
                                                 <td>{{ $item->is_type == true ? 'hien thi' : 'an' }}</td>
                                                 <td>

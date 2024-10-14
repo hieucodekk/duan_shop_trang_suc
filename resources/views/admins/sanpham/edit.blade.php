@@ -212,7 +212,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="d-flex"><button type="submit" class="btn btn-primary">thêm mới</button>
+                                    <div class="d-flex"><button type="submit" class="btn btn-primary">cập nhật</button>
                                     </div>
                                 </div>
                             </form>

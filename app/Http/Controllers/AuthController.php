@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function login(Request $request){
         $user =$request->only('email',"password"); //only lay du lieu minh can
         if(Auth::attempt($user)){
-            return redirect()->intended('home');
+            return redirect()->intended('/');
         }
         return redirect()->back()->withErrors([
             'email'=> "thong tin khong dung"
@@ -31,10 +31,14 @@ class AuthController extends Controller
         ]);
         $user = User::query()->create($data);
         Auth::login($user);
-        return redirect()->intended('home');
+        return redirect()->intended('/');
     }
      public function logout(Request $request){
         Auth::logout();
         return redirect('/login');
+    }
+    public function listUser(){
+        $listUser =User::all();
+        return view('admins.listuser', compact('listUser'));
     }
 }

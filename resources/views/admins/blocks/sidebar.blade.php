@@ -26,24 +26,13 @@
             <ul id="side-menu">
 
                 <li class="menu-title">Menu</li>
-
-                <li>
-                    <a href="#sidebarDashboards" data-bs-toggle="collapse">
-                        <i data-feather="home"></i>
-                        <span> Dashboard </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarDashboards">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a class='tp-link' href='index.html'>Analytical</a>
-                            </li>
-                            <li>
-                                <a class='tp-link' href='ecommerce.html'>E-commerce</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                    <li>
+                        <a class='tp-link' href='{{route('admins.listuser')}}'>
+                            <i data-feather="users"></i>
+                            <span> Users </span>
+                        </a>
+                     </li>
+               
              
                 <li class="menu-title">Pages</li>
                 <li>
@@ -57,7 +46,13 @@
                         <i data-feather="align-center"></i>
                         <span> Product </span>
                     </a>
-                </li>            
+                </li>  
+                <li>
+                    <a class='tp-link' href='{{route('admins.donhang1s.index')}}'>
+                        <i data-feather="shopping-bag"></i>
+                        <span> Don hang </span>
+                    </a>
+                </li>              
             </ul>
         </div>
         <!-- End Sidebar -->

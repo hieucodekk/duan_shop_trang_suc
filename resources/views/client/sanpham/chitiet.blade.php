@@ -263,7 +263,7 @@
                         @foreach ($listSP as $item)
                             <div class="product-item">
                                 <figure class="product-thumb">
-                                    <a href="product-details.html">
+                                    <a href="{{route('products.detail', $item->id)}}">
                                         <img class="pri-img" src="{{ Storage::url($item->hinh_anh) }}" alt="product">
                                         <img class="sec-img" src="{{ Storage::url($item->hinh_anh) }}" alt="product">
                                     </a>
@@ -288,7 +288,7 @@
                                 <div class="product-caption text-center">
                                     <div class="product-identity">
                                         <p class="manufacturer-name"><a
-                                                href="product-details.html">{{ $item->danhMuc->ten_danh_muc }}</a></p>
+                                                href="{{route('products.detail', $item->id)}}">{{ $item->danhMuc->ten_danh_muc }}</a></p>
                                     </div>
                                     <ul class="color-categories">
                                         <li>
@@ -305,13 +305,13 @@
                                         </li>
                                     </ul>
                                     <h6 class="product-name">
-                                        <a href="product-details.html">{{ $item->ten_san_pham }}</a>
+                                        <a href="{{route('products.detail', $item->id)}}">{{ $item->ten_san_pham }}</a>
                                     </h6>
                                     <div class="price-box">
                                         <span
-                                            class="price-regular">${{ number_format($item->gia_khuyen_mai, 0, '', '.') }}</span>
+                                            class="price-regular">{{ number_format($item->gia_khuyen_mai, 0, '', '.') }}</span>
                                         <span
-                                            class="price-old"><del>${{ number_format($item->gia_san_pham, 0, '', '.') }}</del></span>
+                                            class="price-old"><del>{{ number_format($item->gia_san_pham, 0, '', '.') }}</del></span>
                                     </div>
                                 </div>
                             </div>

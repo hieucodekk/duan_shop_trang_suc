@@ -164,7 +164,8 @@
     <!-- Quick view modal end -->
 
     <!-- offcanvas mini cart start -->
-    <div class="offcanvas-minicart-wrapper">
+
+    {{-- <div class="offcanvas-minicart-wrapper">
         <div class="minicart-inner">
             <div class="offcanvas-overlay"></div>
             <div class="minicart-inner-content">
@@ -239,7 +240,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    
     <!-- offcanvas mini cart end -->
 
     <!-- JS

@@ -61,7 +61,7 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li class="active"><a href="index.html">Home</a>
+                                        <li class="active"><a href="{{route('home')}}">Home</a>
                                             <!-- <ul class="dropdown">
                                                     <li><a href="index.html">Home version 01</a></li>
                                                     <li><a href="index-2.html">Home version 02</a></li>
@@ -205,6 +205,7 @@
                                             <li><a href="login-register.html">login</a></li>
                                             <li><a href="login-register.html">register</a></li>
                                             <li><a href="my-account.html">my account</a></li>
+                                            <li><a href="{{route('donhangs.index')}}">my order</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -219,6 +220,7 @@
                                             <div class="notification">{{ session('cart') ? count(session('cart')) : 0 }}</div>
                                         </a>
                                     </li>
+                                    
                                 </ul>
                             </div>
                         </div>

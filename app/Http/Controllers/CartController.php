@@ -15,7 +15,7 @@ class CartController extends Controller
         foreach($cart as $item ){
             $subtotal += $item['gia'] *$item['so_luong'];
         }
-        $shipping = 300;
+        $shipping = 30000;
         $total = $subtotal + $shipping;
         return view('client.sanpham.giohang', compact('cart','total','shipping','subtotal'));
     }
@@ -40,7 +40,9 @@ class CartController extends Controller
         session()->put('cart',$cart);
         return redirect()->back();
     }
-    public function updateCart(){
-        
+    public function updateCart(Request $request){
+        $cartNew = $request->input('cart', []);
+        session()->put('cart',$cartNew);
+        return redirect()->back();
     }
 }
