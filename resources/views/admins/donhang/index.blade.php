@@ -63,7 +63,7 @@
                                                                 <option value="{{ $key }}"
                                                                     {{ $key == $item->trang_thai ? 'selected' : '' }}
                                                                     {{ $key == 'huy_don_hang' ? 'disabled' : '' }}
-                                                                    {{ $key == 'da_giang_hang' ? 'disabled' : '' }}>
+                                                                    >
                                                                     {{ $value }}</option>
                                                             @endforeach
                                                         </select>

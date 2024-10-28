@@ -3,7 +3,6 @@
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-
             <div class="logo-box">
                 <a class='logo logo-light' href='index.html'>
                     <span class="logo-sm">
